@@ -21,13 +21,14 @@ public class Main {
 			
 			// iniciar sesión anónimo (login)
 			cliente.login("", "");
+			System.out.println(cliente);
+			
 			
 			// cambiar el directorio actual en el servidor
-			cliente.changeWorkingDirectory("/debian/dists");
+			cliente.changeWorkingDirectory("/.././debian/pool");
 			
 			// recuperar un listado de los ficheros y directorios del directorio actual del servidor
 			FTPFile [] ficheros = cliente.listFiles();
-			
 			// recorrer el listado de archivos recuperados
 			System.out.println("Listar archivos del servidor:");
 			System.out.println("Nombre / Tamaño  / Tipo");
@@ -55,6 +56,7 @@ public class Main {
 
 			// cambiar el directorio padre en el servidor
 			cliente.changeWorkingDirectory("..");
+			
 
 			// descargar un fichero
 			File descarga = new File("welcome.msg");
